@@ -1,7 +1,10 @@
+import Text from "./components/text.tsx"
+
 function App() {
   return (
     <>
-      <h1 className="text-4xl">Cheerbot</h1>
+      <Text size="xl">Cheerbot</Text>
+      <Text size='sm'>Convert thoughts to words</Text>
     </>
   )
 }
