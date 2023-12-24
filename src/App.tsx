@@ -5,29 +5,29 @@ import Autocomplete from '@mui/material/Autocomplete'
 import Button from '@mui/material/Button'
 
 const theOccassion = [
-  {label: "Christmas"},
-  {label: "New Year"},
-  {label: "Christmas & New Year"},
-  {label: "Birthday"},
-  {label: "Halloween"},
-  {label: "Easter"},
-  {label: "Thanksgiving"},
-  {label: "Lent"},
-  {label: "Sunday"},
-  {label: "Graduation"},
-  {label: "Matriculation"},
+  { label: 'Christmas' },
+  { label: 'New Year' },
+  { label: 'Christmas & New Year' },
+  { label: 'Birthday' },
+  { label: 'Halloween' },
+  { label: 'Easter' },
+  { label: 'Thanksgiving' },
+  { label: 'Lent' },
+  { label: 'Sunday' },
+  { label: 'Graduation' },
+  { label: 'Matriculation' },
 ]
 
 const theRelationship = [
-  {label: "Brother"},
-  {label: "Sister"},
-  {label: "Uncle"},
-  {label: "Aunt"},
-  {label: "Parent"},
-  {label: "Friend"},
-  {label: "Best Friend"},
-  {label: "Teacher"},
-  {label: "Enemy"},
+  { label: 'Brother' },
+  { label: 'Sister' },
+  { label: 'Uncle' },
+  { label: 'Aunt' },
+  { label: 'Parent' },
+  { label: 'Friend' },
+  { label: 'Best Friend' },
+  { label: 'Teacher' },
+  { label: 'Enemy' },
 ]
 
 function App() {
@@ -53,7 +53,12 @@ function App() {
               options={theOccassion}
               sx={{ width: '100%' }}
               renderInput={(params: any) => (
-                <TextField {...params} label='Occassion' helperText='Please select an occassion' color='warning' />
+                <TextField
+                  {...params}
+                  label='Occassion'
+                  helperText='Please select an occassion'
+                  color='warning'
+                />
               )}
             />
             <Autocomplete
@@ -62,11 +67,18 @@ function App() {
               options={theRelationship}
               sx={{ width: '100%' }}
               renderInput={(params: any) => (
-                <TextField {...params} label='Relationship' helperText='Relationship between you and the recipient' color='warning' />
+                <TextField
+                  {...params}
+                  label='Relationship'
+                  helperText='Relationship between you and the recipient'
+                  color='warning'
+                />
               )}
             />
-            
-      <Button sx={{width: '100%'}} variant="contained">Generate</Button>
+
+            <Button sx={{ width: '100%' }} variant='contained'>
+              Generate
+            </Button>
           </div>
         </div>
       </main>
