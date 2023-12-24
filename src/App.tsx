@@ -3,8 +3,12 @@ import Text from "./components/text.tsx"
 function App() {
   return (
     <>
-      <Text size="xl">Cheerbot</Text>
-      <Text size='sm'>Convert thoughts to words</Text>
+      <header className="px-10 py-4">
+        <div className="">
+        <Text size="xl">Cheerbot</Text>
+      <Text size='sm'>Right words for your messages</Text>
+        </div>
+      </header>
     </>
   )
 }
