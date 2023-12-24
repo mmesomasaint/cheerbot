@@ -1,8 +1,10 @@
+import * as React from 'react'
 import { FaGithub } from 'react-icons/fa6'
 import Text, { TextLink } from './components/text.tsx'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import Button from '@mui/material/Button'
+import Generator from './server-components/generator.server.tsx'
 
 const theOccassion = [
   { label: 'Christmas' },
@@ -80,12 +82,9 @@ function App() {
             </Button>
           </div>
           <div className='col-span-full lg:col-span-7'>
-            <textarea
-              placeholder='Your generated text...'
-              readOnly
-              title='Your generated text'
-              className='p-4 placeholder:text-black/60 w-full h-full bg-transparent border border-black/20 rounded-md'
-            />
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <Generator prompt='I wish you a merry Christmas and a happy new year' />
+            </React.Suspense>
           </div>
         </div>
       </main>
