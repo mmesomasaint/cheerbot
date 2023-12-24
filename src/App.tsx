@@ -26,9 +26,7 @@ function App() {
           </div>
           <div className=''>
             <Text size='xs'>&copy; 2023</Text>
-            <Text size='sm'>
-              Cheerbot
-            </Text>
+            <Text size='sm'>Cheerbot</Text>
           </div>
         </div>
       </footer>
