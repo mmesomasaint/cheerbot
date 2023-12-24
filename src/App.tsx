@@ -15,7 +15,13 @@ function App() {
           </div>
         </div>
       </header>
-      <main className='grow flex'></main>
+      <main className='grow p-10 mt-[5.3rem] h-full'>
+        <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-10 h-full'>
+          <div className='col-span-full lg:col-span-4 xl:col-span-6 rounded-lg border border-white/50 h-full'>
+            h
+          </div>
+        </div>
+      </main>
       <footer className='w-full px-10 py-4 border-t border-gray-300/40'>
         <div className='flex justify-between items-center'>
           <div className=''>
