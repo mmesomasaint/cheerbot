@@ -3,6 +3,7 @@ import Text, { TextLink } from './components/text.tsx'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import Button from '@mui/material/Button'
+import { TextareaAutosize } from '@mui/material'
 
 const theOccassion = [
   { label: 'Christmas' },
@@ -70,15 +71,17 @@ function App() {
                 <TextField
                   {...params}
                   label='Relationship'
-                  helperText='Relationship between you and the recipient'
+                  helperText='Please select relationship between you and the recipient'
                   color='warning'
                 />
               )}
             />
-
             <Button sx={{ width: '100%' }} variant='contained'>
               Generate
             </Button>
+          </div>
+          <div className='col-span-full lg:col-span-7'>
+            <textarea placeholder='Your generated text...' readOnly title='Your generated text' className='p-4 placeholder:text-black/60 w-full h-full bg-transparent border border-black/20 rounded-lg' />
           </div>
         </div>
       </main>
