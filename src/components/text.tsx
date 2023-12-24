@@ -45,7 +45,7 @@ export function TextLink({
   return (
     <a
       href={to}
-      className={`underline decoration-from-font underline-offset-4 decoration-primary ${className}`}
+      className={`hover:underline decoration-from-font underline-offset-4 decoration-primary ${className}`}
     >
       <Text size='sm' primary>
         {children}

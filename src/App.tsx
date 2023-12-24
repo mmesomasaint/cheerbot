@@ -16,7 +16,7 @@ function App() {
         </div>
       </header>
       <main className='grow flex'></main>
-      <footer className='w-full py-4 border-t border-gray-300/40'>
+      <footer className='w-full px-10 py-4 border-t border-gray-300/40'>
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xs'>Made with ❤️ by</Text>
