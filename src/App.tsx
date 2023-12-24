@@ -45,9 +45,9 @@ function App() {
           </div>
         </div>
       </header>
-      <main className='grow p-10 mt-[5.3rem] h-full bg-white/50'>
-        <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-20 h-full'>
-          <div className='col-span-full lg:col-span-4 xl:col-span-5 rounded-lg h-full flex flex-col justify-start items-start gap-8'>
+      <main className='grow w-full p-10 mt-[5.3rem] bg-white/50 flex flex-col'>
+        <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-20 grow w-full'>
+          <div className='col-span-full lg:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start gap-8'>
             <Autocomplete
               disablePortal
               id='combo-box-demo'
@@ -81,7 +81,7 @@ function App() {
             </Button>
           </div>
           <div className='col-span-full lg:col-span-7'>
-            <textarea placeholder='Your generated text...' readOnly title='Your generated text' className='p-4 placeholder:text-black/60 w-full h-full bg-transparent border border-black/20 rounded-lg' />
+            <textarea placeholder='Your generated text...' readOnly title='Your generated text' className='p-4 placeholder:text-black/60 w-full h-full bg-transparent border border-black/20 rounded-md' />
           </div>
         </div>
       </main>
