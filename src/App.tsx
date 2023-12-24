@@ -1,5 +1,5 @@
 import { FaGithub } from 'react-icons/fa6'
-import Text from './components/text.tsx'
+import Text, { TextLink } from './components/text.tsx'
 
 function App() {
   return (
@@ -15,6 +15,15 @@ function App() {
           </div>
         </div>
       </header>
+      <main className='grow flex'></main>
+      <footer className='w-full py-4 border-t border-gray-300/40'>
+        <div className='flex justify-between items-center'>
+          <div className=''>
+            <Text size='xs'>Made with ❤️ by</Text>
+            <TextLink to='https://github.com/mmesomasaint'>Mmesoma Saint</TextLink>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
