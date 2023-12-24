@@ -39,7 +39,7 @@ export function TextLink({
   children,
 }: {
   to: string
-  className: string
+  className?: string
   children: React.ReactNode
 }) {
   return (
