@@ -1,28 +1,76 @@
 import { FaGithub } from 'react-icons/fa6'
 import Text, { TextLink } from './components/text.tsx'
+import TextField from '@mui/material/TextField'
+import Autocomplete from '@mui/material/Autocomplete'
+import Button from '@mui/material/Button'
+
+const theOccassion = [
+  {label: "Christmas"},
+  {label: "New Year"},
+  {label: "Christmas & New Year"},
+  {label: "Birthday"},
+  {label: "Halloween"},
+  {label: "Easter"},
+  {label: "Thanksgiving"},
+  {label: "Lent"},
+  {label: "Sunday"},
+  {label: "Graduation"},
+  {label: "Matriculation"},
+]
+
+const theRelationship = [
+  {label: "Brother"},
+  {label: "Sister"},
+  {label: "Uncle"},
+  {label: "Aunt"},
+  {label: "Parent"},
+  {label: "Friend"},
+  {label: "Best Friend"},
+  {label: "Teacher"},
+  {label: "Enemy"},
+]
 
 function App() {
   return (
     <div className='min-h-screen flex flex-col w-full'>
-      <header className='fixed w-full px-10 py-4 border-b border-gray-300/40'>
+      <header className='fixed w-full px-10 py-4 border-b border-gray-300/20'>
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xl'>Cheerbot</Text>
             <Text size='xs'>Right words for your messages</Text>
           </div>
-          <div className='w-12 h-12 flex justify-center items-center border border-gray-300/40 rounded-lg duration-300 hover:scale-110 hover:shadow-lg'>
+          <div className='w-12 h-12 flex justify-center items-center border border-gray-300/20 rounded-lg duration-300 hover:scale-110 hover:shadow-lg'>
             <FaGithub className='text-3xl' />
           </div>
         </div>
       </header>
-      <main className='grow p-10 mt-[5.3rem] h-full'>
-        <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-10 h-full'>
-          <div className='col-span-full lg:col-span-4 xl:col-span-6 rounded-lg border border-white/50 h-full'>
-            h
+      <main className='grow p-10 mt-[5.3rem] h-full bg-white/50'>
+        <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-20 h-full'>
+          <div className='col-span-full lg:col-span-4 xl:col-span-5 rounded-lg h-full flex flex-col justify-start items-start gap-8'>
+            <Autocomplete
+              disablePortal
+              id='combo-box-demo'
+              options={theOccassion}
+              sx={{ width: '100%' }}
+              renderInput={(params: any) => (
+                <TextField {...params} label='Occassion' helperText='Please select an occassion' color='warning' />
+              )}
+            />
+            <Autocomplete
+              disablePortal
+              id='combo-box-demo'
+              options={theRelationship}
+              sx={{ width: '100%' }}
+              renderInput={(params: any) => (
+                <TextField {...params} label='Relationship' helperText='Relationship between you and the recipient' color='warning' />
+              )}
+            />
+            
+      <Button sx={{width: '100%'}} variant="contained">Generate</Button>
           </div>
         </div>
       </main>
-      <footer className='w-full px-10 py-4 border-t border-gray-300/40'>
+      <footer className='w-full px-10 py-4 border-t border-gray-300/20'>
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xs'>Made with ❤️ by</Text>

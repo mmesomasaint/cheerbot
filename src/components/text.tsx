@@ -27,7 +27,7 @@ export default function Text({
   const isFaded = faded ? `${isWhite}/50` : isWhite
 
   return (
-    <p className={`${isCopy} ${isFaded} ${sizeStyles} font-medium`}>
+    <p className={`${isCopy} ${isFaded} ${sizeStyles} font-normal`}>
       {children}
     </p>
   )
