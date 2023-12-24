@@ -20,7 +20,9 @@ function App() {
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xs'>Made with ❤️ by</Text>
-            <TextLink to='https://github.com/mmesomasaint'>Mmesoma Saint</TextLink>
+            <TextLink to='https://github.com/mmesomasaint'>
+              Mmesoma Saint
+            </TextLink>
           </div>
         </div>
       </footer>
