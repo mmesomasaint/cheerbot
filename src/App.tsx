@@ -81,7 +81,12 @@ function App() {
             </Button>
           </div>
           <div className='col-span-full lg:col-span-7'>
-            <textarea placeholder='Your generated text...' readOnly title='Your generated text' className='p-4 placeholder:text-black/60 w-full h-full bg-transparent border border-black/20 rounded-md' />
+            <textarea
+              placeholder='Your generated text...'
+              readOnly
+              title='Your generated text'
+              className='p-4 placeholder:text-black/60 w-full h-full bg-transparent border border-black/20 rounded-md'
+            />
           </div>
         </div>
       </main>
