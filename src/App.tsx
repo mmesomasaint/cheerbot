@@ -3,8 +3,8 @@ import Text from './components/text.tsx'
 
 function App() {
   return (
-    <>
-      <header className='px-10 py-4 border-b border-gray-300/40'>
+    <div className='min-h-screen flex flex-col w-full'>
+      <header className='fixed w-full px-10 py-4 border-b border-gray-300/40'>
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xl'>Cheerbot</Text>
@@ -15,7 +15,7 @@ function App() {
           </div>
         </div>
       </header>
-    </>
+    </div>
   )
 }
 
