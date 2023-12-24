@@ -3,7 +3,6 @@ import Text, { TextLink } from './components/text.tsx'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import Button from '@mui/material/Button'
-import { TextareaAutosize } from '@mui/material'
 
 const theOccassion = [
   { label: 'Christmas' },
