@@ -2,13 +2,13 @@ import { CohereClient } from 'cohere-ai'
 import { Suspense } from 'react'
 import Text from '../components/text.tsx'
 
-const cohere = new CohereClient({
-  token: 'kTgRTN0S3ZJS4674O1WF3hkVZbyI2aR3rGjGAWGo',
-})
-
 type PropTypes = {
   prompt: string
 }
+
+const cohere = new CohereClient({
+  token: 'kTgRTN0S3ZJS4674O1WF3hkVZbyI2aR3rGjGAWGo',
+})
 
 export default async function Generate({ prompt }: PropTypes) {
   const generate = await cohere.generate({
