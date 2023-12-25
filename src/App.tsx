@@ -43,7 +43,9 @@ function App() {
     const occassion = form.get('occassion')
     const relationship = form.get('relationship')
 
-    setPrompt(`Generate a [${occassion}] message for your [${relationship}] [name] from the heart.`)
+    setPrompt(
+      `Generate a [${occassion}] message for your [${relationship}] [name] from the heart.`
+    )
   }
 
   return (
@@ -61,7 +63,10 @@ function App() {
       </header>
       <main className='grow w-full p-10 mt-[5.3rem] bg-white/50 flex flex-col'>
         <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-20 grow w-full'>
-          <form onSubmit={createPrompt} className='col-span-full lg:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start gap-8'>
+          <form
+            onSubmit={createPrompt}
+            className='col-span-full lg:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start gap-8'
+          >
             <Autocomplete
               disablePortal
               id='combo-box-demo'
