@@ -16,10 +16,11 @@ export default function Generator({ prompt }: PropTypes) {
   useEffect(() => {
     const generate = async () => {
       const response = await cohere.generate({ prompt })
-      setMessage(`${response}`)
+      const generations = response.generations
+      setMessage(`${generations[0].text}`)
     }
 
-    generate()
+    prompt && generate()
   }, [prompt])
 
   return (
