@@ -1,4 +1,4 @@
-import * as React from 'react'
+import {Suspense} from 'react'
 import { FaGithub } from 'react-icons/fa6'
 import Text, { TextLink } from './components/text.tsx'
 import TextField from '@mui/material/TextField'
@@ -82,9 +82,6 @@ function App() {
             </Button>
           </div>
           <div className='col-span-full lg:col-span-7'>
-            <React.Suspense fallback={<div>Loading...</div>}>
-              <Generator prompt='I wish you a merry Christmas and a happy new year' />
-            </React.Suspense>
           </div>
         </div>
       </main>
