@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import Button from '@mui/material/Button'
 import Generator from './Generator.tsx'
+import { useState } from 'react'
 
 const theOccassion = [
   { label: 'Christmas' },
@@ -32,6 +33,19 @@ const theRelationship = [
 ]
 
 function App() {
+  const [prompt, setPrompt] = useState<string>('')
+
+  const createPrompt = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const elements = e.currentTarget
+    const form = new FormData(elements)
+    const occassion = form.get('occassion')
+    const relationship = form.get('relationship')
+
+    setPrompt(`Generate a [${occassion}] message for your [${relationship}] [name] from the heart.`)
+  }
+
   return (
     <div className='min-h-screen flex flex-col w-full'>
       <header className='fixed w-full px-10 py-4 border-b border-gray-300/20'>
@@ -47,10 +61,11 @@ function App() {
       </header>
       <main className='grow w-full p-10 mt-[5.3rem] bg-white/50 flex flex-col'>
         <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-20 grow w-full'>
-          <div className='col-span-full lg:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start gap-8'>
+          <form onSubmit={createPrompt} className='col-span-full lg:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start gap-8'>
             <Autocomplete
               disablePortal
               id='combo-box-demo'
+              name='occassion'
               options={theOccassion}
               sx={{ width: '100%' }}
               renderInput={(params: any) => (
@@ -65,6 +80,7 @@ function App() {
             <Autocomplete
               disablePortal
               id='combo-box-demo'
+              name='relationship'
               options={theRelationship}
               sx={{ width: '100%' }}
               renderInput={(params: any) => (
@@ -76,12 +92,12 @@ function App() {
                 />
               )}
             />
-            <Button sx={{ width: '100%' }} variant='contained'>
+            <Button type='submit' sx={{ width: '100%' }} variant='contained'>
               Generate
             </Button>
-          </div>
+          </form>
           <div className='col-span-full md:col-span-7'>
-            <Generator prompt='I wish you a merry Christmas and a happy new year' />
+            <Generator prompt={prompt} />
           </div>
         </div>
       </main>
