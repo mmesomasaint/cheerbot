@@ -10,7 +10,7 @@ type PropTypes = {
   prompt: string
 }
 
-export default async function Generate({prompt}: PropTypes) {
+export default async function Generate({ prompt }: PropTypes) {
   const generate = await cohere.generate({
     prompt: prompt,
   })
@@ -18,10 +18,9 @@ export default async function Generate({prompt}: PropTypes) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <article className='p-4 w-full h-full bg-transparent border border-black/20 rounded-md'>
-      <Text size='xs'>
-            {generate ? `${generate}` : 'Something went wrong. Please try again.'}
-          </Text>
-
+        <Text size='xs'>
+          {generate ? `${generate}` : 'Something went wrong. Please try again.'}
+        </Text>
       </article>
     </Suspense>
   )
