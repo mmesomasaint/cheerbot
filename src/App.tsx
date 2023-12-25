@@ -1,10 +1,10 @@
-import {Suspense} from 'react'
 import { FaGithub } from 'react-icons/fa6'
 import Text, { TextLink } from './components/text.tsx'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import Button from '@mui/material/Button'
 import Generator from './server-components/generator.server.tsx'
+import Generate from './server-components/generator.server.tsx'
 
 const theOccassion = [
   { label: 'Christmas' },
@@ -82,6 +82,7 @@ function App() {
             </Button>
           </div>
           <div className='col-span-full lg:col-span-7'>
+            <Generate prompt='I wish you a merry Christmas and a happy new year' />
           </div>
         </div>
       </main>
