@@ -10,7 +10,7 @@ const cohere = new CohereClient({
   token: 'kTgRTN0S3ZJS4674O1WF3hkVZbyI2aR3rGjGAWGo',
 })
 
-export default function Generate({ prompt }: PropTypes) {
+export default function Generator({ prompt }: PropTypes) {
   const [message, setMessage] = useState<string | null>(null)
 
   useEffect(() => {
