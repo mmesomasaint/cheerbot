@@ -24,12 +24,10 @@ export default function Generator({ prompt }: PropTypes) {
   }, [prompt])
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <article className='p-4 w-full h-full bg-transparent border border-black/20 rounded-md'>
-        <Text size='xs'>
-          {message ? `${message}` : 'Something went wrong. Please try again.'}
-        </Text>
-      </article>
-    </Suspense>
+    <article className='p-4 w-full h-full bg-transparent border border-black/20 rounded-md'>
+      <Text size='xs'>
+        {message ? `${message}` : 'Something went wrong. Please try again.'}
+      </Text>
+    </article>
   )
 }
