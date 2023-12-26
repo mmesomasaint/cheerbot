@@ -69,7 +69,7 @@ function App() {
           >
             <Autocomplete
               disablePortal
-              id='combo-box-demo'
+              id='occassion-box'
               name='occassion'
               options={theOccassion}
               sx={{ width: '100%', '& .css-y8fhu3-MuiInputBase-root-MuiOutlinedInput-root': {
@@ -92,9 +92,9 @@ function App() {
             />
             <Autocomplete
               required
-              error={false}
+              error={'Error'}
               disablePortal
-              id='combo-box-demo'
+              id='relationship box'
               name='relationship'
               options={theRelationship}
               sx={{ width: '100%' }}
