@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className='min-h-screen flex flex-col w-full'>
-      <header className='fixed w-full px-10 py-4 border-b border-gray-300/20'>
+      <header className='fixed w-full px-10 py-4 border-b border-gray-300/20 bg-[#242424]'>
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xl'>Cheerbot</Text>
