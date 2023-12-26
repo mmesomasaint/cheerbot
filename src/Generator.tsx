@@ -31,7 +31,7 @@ export default function Generator({ prompt }: PropTypes) {
     // Check if the string ends with the phrase (ignoring case and ending punctuation)
     if (str.toLowerCase().endsWith(phraseToRemove.toLowerCase()) ||
         str.toLowerCase().endsWith(phraseToRemove.toLowerCase() + endingPunctuation)) {
-      return str.slice(0, -phraseToRemove.length - endingPunctuation.length);
+      return str.slice(0, -phraseToRemove.length - String(endingPunctuation).length);
     } else {
       return str; // Return the original string if the phrase is not found
     }
