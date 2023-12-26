@@ -61,18 +61,26 @@ function App() {
           </div>
         </div>
       </header>
-      <main className='grow w-full md:p-10 px-5 py-16 mt-[5.3rem] bg-white/50 flex flex-col'>
+      <main className='grow w-full md:p-10 px-5 py-16 mt-[5.3rem] bg-white flex flex-col'>
         <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-20 grow w-full'>
           <form
             onSubmit={createPrompt}
-            className='col-span-full lg:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start gap-8'
+            className='col-span-full lg:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start md:gap-8 gap-4'
           >
             <Autocomplete
               disablePortal
               id='combo-box-demo'
               name='occassion'
               options={theOccassion}
-              sx={{ width: '100%' }}
+              sx={{ width: '100%', '& .css-y8fhu3-MuiInputBase-root-MuiOutlinedInput-root': {
+                // Normal color: white at opacity 0.5
+                color: 'rgba(255, 255, 255, 0.5)',
+          
+                // On focus color: same as normal color
+                '&:focus': {
+                  color: 'rgba(255, 255, 255, 0.5)',
+                },
+              }, }}
               renderInput={(params: any) => (
                 <TextField
                   {...params}
@@ -97,7 +105,7 @@ function App() {
                 />
               )}
             />
-            <Button type='submit' sx={{ width: '100%' }} variant='contained'>
+            <Button type='submit' sx={{ width: '100%', backgroundColor: '#242424' }} variant='contained'>
               Generate
             </Button>
           </form>
