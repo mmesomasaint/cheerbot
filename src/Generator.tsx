@@ -39,7 +39,7 @@ export default function Generator({ prompt }: PropTypes) {
   return (
     <article className='p-4 w-full h-full bg-transparent border border-black/20 rounded-md'>
       <Text size='sm' copy>
-        {loading ? 'Loading...' : message ? `${message}` : 'Something went wrong. Please try again.'}
+        {loading ? 'Loading...' : message ? `${message}` : 'Your generated message goes here.'}
       </Text>
     </article>
   )
