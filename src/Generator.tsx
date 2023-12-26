@@ -7,7 +7,7 @@ type PropTypes = {
 }
 
 const cohere = new CohereClient({
-  token: 'kTgRTN0S3ZJS4674O1WF3hkVZbyI2aR3rGjGAWGo',
+  token: process.env.COHERE_API_KEY ?? '',
 })
 
 export default function Generator({ prompt }: PropTypes) {
