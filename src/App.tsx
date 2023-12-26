@@ -62,10 +62,10 @@ function App() {
         </div>
       </header>
       <main className='grow w-full md:p-10 px-5 py-16 mt-[5.3rem] bg-white flex flex-col'>
-        <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-20 grow w-full'>
+        <div className='grid xl:grid-cols-12 md:grid-cols-10 lg:gap-20 md:gap-10 gap-20 grow w-full'>
           <form
             onSubmit={createPrompt}
-            className='col-span-full lg:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start md:gap-8 gap-4'
+            className='col-span-full md:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start md:gap-8 gap-4'
           >
             <Autocomplete
               disablePortal
@@ -111,7 +111,7 @@ function App() {
               Generate
             </Button>
           </form>
-          <div className='col-span-full md:col-span-7'>
+          <div className='col-span-full xl:col-span-7 md:col-span-6'>
             <Generator prompt={prompt} />
           </div>
         </div>
