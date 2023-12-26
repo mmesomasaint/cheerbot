@@ -34,17 +34,17 @@ const theRelationship = [
 
 function App() {
   const [prompt, setPrompt] = useState<string>('')
+  const [formData, setFormData] = useState({
+    occassion: null,
+    relationship: null,
+  })
 
-  const createPrompt = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const setOccassion = (occassion: string) => setFormData({...formData, occassion})
+  const setRelationship = (relationship: string) => setFormData({...formData, relationship})
 
-    const elements = e.currentTarget
-    const form = new FormData(elements)
-    const occassion = form.get('occassion')
-    const relationship = form.get('relationship')
-
+  const createPrompt = () => {
     setPrompt(
-      `Generate a '${occassion}' message for me. This message should be from me to my '${relationship}' called [recipients-name]. This message should feel natural and from the heart.`
+      `Generate a short '${formData.occassion}' message for me. This message should be from me to my '${formData.relationship}' called [recipients-name]. This message should feel natural and from the heart.`
     )
   }
 
@@ -63,24 +63,16 @@ function App() {
       </header>
       <main className='grow w-full md:p-10 px-5 py-16 mt-[5.3rem] bg-white flex flex-col'>
         <div className='grid xl:grid-cols-12 md:grid-cols-10 lg:gap-20 md:gap-10 gap-20 grow w-full'>
-          <form
-            onSubmit={createPrompt}
+          <div
             className='col-span-full md:col-span-4 xl:col-span-5 h-full flex flex-col justify-start items-start md:gap-8 gap-4'
           >
             <Autocomplete
               disablePortal
               id='occassion-box'
               name='occassion'
+              onChange={(_: any, newValue: any) => setOccassion(newValue.label)}
               options={theOccassion}
-              sx={{ width: '100%', '& .css-y8fhu3-MuiInputBase-root-MuiOutlinedInput-root': {
-                // Normal color: white at opacity 0.5
-                borderColor: 'rgba(255, 255, 255, 0.5)',
-          
-                // On focus color: same as normal color
-                '&:focus': {
-                  color: 'rgba(255, 255, 255, 0.5)',
-                },
-              }, }}
+              sx={{ width: '100%' }}
               renderInput={(params: any) => (
                 <TextField
                   {...params}
@@ -94,8 +86,10 @@ function App() {
               required
               error={'Error'}
               disablePortal
-              id='relationship box'
+              id='relationship-box'
               name='relationship'
+              value={formData.relationship}
+              onChange={(_: any, newValue: any) => setRelationship(newValue.label)}
               options={theRelationship}
               sx={{ width: '100%' }}
               renderInput={(params: any) => (
@@ -107,10 +101,10 @@ function App() {
                 />
               )}
             />
-            <Button type='submit' sx={{ width: '100%', backgroundColor: '#242424' }} variant='contained'>
+            <Button type='button' onClick={createPrompt} sx={{ width: '100%', backgroundColor: '#242424' }} variant='contained'>
               Generate
             </Button>
-          </form>
+          </div>
           <div className='col-span-full xl:col-span-7 md:col-span-6'>
             <Generator prompt={prompt} />
           </div>
