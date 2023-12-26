@@ -22,7 +22,7 @@ export default function Text({
   } ${size === 'xs' && 'text-xs'}`
 
   const isCopy = `${copy ? 'leading-snug' : 'leading-none'}`
-  const isPrimary = `${primary ? 'text-primary' : 'text-bg-primary'}`
+  const isPrimary = `${primary ? 'text-[#242424]' : 'text-black'}`
   const isWhite = `${white ? 'text-white' : isPrimary}`
   const isFaded = faded ? `${isWhite}/50` : isWhite
 

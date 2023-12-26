@@ -91,6 +91,8 @@ function App() {
               )}
             />
             <Autocomplete
+              required
+              error={false}
               disablePortal
               id='combo-box-demo'
               name='relationship'
