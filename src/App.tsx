@@ -77,6 +77,7 @@ function App() {
               onChange={(_: any, newValue: any) => setOccassion(newValue.label)}
               options={theOccassion}
               sx={{ width: '100%' }}
+              isOptionEqualToValue={(option, value) => option === value}
               renderInput={(params: any) => (
                 <TextField
                   {...params}
@@ -95,6 +96,7 @@ function App() {
               }
               options={theRelationship}
               sx={{ width: '100%' }}
+              isOptionEqualToValue={(option, value) => option.label === value}
               renderInput={(params: any) => (
                 <TextField
                   {...params}
