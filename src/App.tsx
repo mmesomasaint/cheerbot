@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className='min-h-screen flex flex-col w-full'>
-      <header className='fixed w-full px-10 py-4 border-b border-gray-300/20 bg-[#242424]'>
+      <header className='fixed w-full md:px-10 px-5 py-4 border-b border-gray-300/20 bg-[#242424]'>
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xl'>Cheerbot</Text>
@@ -61,7 +61,7 @@ function App() {
           </div>
         </div>
       </header>
-      <main className='grow w-full p-10 mt-[5.3rem] bg-white/50 flex flex-col'>
+      <main className='grow w-full md:p-10 px-5 py-16 mt-[5.3rem] bg-white/50 flex flex-col'>
         <div className='grid xl:grid-cols-12 lg:grid-cols-10 gap-20 grow w-full'>
           <form
             onSubmit={createPrompt}
@@ -106,7 +106,7 @@ function App() {
           </div>
         </div>
       </main>
-      <footer className='w-full px-10 py-4 border-t border-gray-300/20'>
+      <footer className='w-full md:px-10 px-5 py-4 border-t border-gray-300/20'>
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xs'>Made with ❤️ by</Text>
