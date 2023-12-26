@@ -5,6 +5,7 @@ import Autocomplete from '@mui/material/Autocomplete'
 import Button from '@mui/material/Button'
 import Generator from './Generator.tsx'
 import { useState } from 'react'
+import { zIndex } from 'material-ui/styles'
 
 const theOccassion = [
   { label: 'Christmas' },
@@ -44,13 +45,13 @@ function App() {
     const relationship = form.get('relationship')
 
     setPrompt(
-      `Generate a [${occassion}] message for your [${relationship}] [name] from the heart.`
+      `Generate a [${occassion}] message for my [${relationship}] [name] from the heart.`
     )
   }
 
   return (
     <div className='min-h-screen flex flex-col w-full'>
-      <header className='fixed w-full md:px-10 px-5 py-4 border-b border-gray-300/20 bg-[#242424]'>
+      <header className='z-30 fixed w-full md:px-10 px-5 py-4 border-b border-gray-300/20 bg-[#242424]'>
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xl' faded>Cheerbot</Text>
