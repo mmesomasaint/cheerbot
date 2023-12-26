@@ -14,17 +14,26 @@ export default function Generator({ prompt }: PropTypes) {
   const [message, setMessage] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
 
-  useEffect(() => {
-    setLoading(true)
+  const getRandomNumber = (LIMIT: number) => {
+    // Use Math.random() to generate a random number between 0 (inclusive) and 1 (exclusive)
+    const randomDecimal = Math.random();
+  
+    // Multiply by LIMIT and floor the result to get a whole number within the desired range
+    const randomNumber = Math.floor(randomDecimal * LIMIT);
+  
+    return randomNumber;
+  }
 
+  useEffect(() => {
     const generate = async () => {
+      setLoading(true)
       const response = await cohere.generate({ prompt })
       const generations = response.generations
-      setMessage(`${generations[0].text}`)
+      const generatedMsg = generations[getRandomNumber(generations.length)].text
+      setMessage(`${generatedMsg}`)
     }
     
-    prompt && generate()
-    setLoading(false)
+    prompt && generate().then(() => setLoading(false))
   }, [prompt])
 
   return (
