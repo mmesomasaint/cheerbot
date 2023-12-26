@@ -58,7 +58,7 @@ export default function Generator({ prompt }: PropTypes) {
 
   return (
     <article className='p-4 w-full h-full bg-transparent border border-black/20 rounded-md'>
-      <Text size='sm' copy>
+      <Text size='sm' copy primary>
         {loading
           ? 'Loading...'
           : message
