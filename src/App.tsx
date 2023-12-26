@@ -44,7 +44,7 @@ function App() {
     const relationship = form.get('relationship')
 
     setPrompt(
-      `Generate a [${occassion}] message for my [${relationship}] [name] from the heart.`
+      `Generate a '${occassion}' message for me. This message should be from me to my '${relationship}' called [recipients-name]. This message should feel natural and from the heart.`
     )
   }
 
