@@ -12,12 +12,16 @@ const cohere = new CohereClient({
 
 export default function Generator({ prompt }: PropTypes) {
   const [message, setMessage] = useState<string | null>(null)
+  const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
+    setLoading(true)
+
     const generate = async () => {
       const response = await cohere.generate({ prompt })
       const generations = response.generations
       setMessage(`${generations[0].text}`)
+      setLoading(false)
     }
 
     prompt && generate()
@@ -26,7 +30,7 @@ export default function Generator({ prompt }: PropTypes) {
   return (
     <article className='p-4 w-full h-full bg-transparent border border-black/20 rounded-md'>
       <Text size='sm' copy>
-        {message ? `${message}` : 'Something went wrong. Please try again.'}
+        {loading ? 'Loading...' : message ? `${message}` : 'Something went wrong. Please try again.'}
       </Text>
     </article>
   )
