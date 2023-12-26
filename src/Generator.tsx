@@ -21,10 +21,10 @@ export default function Generator({ prompt }: PropTypes) {
       const response = await cohere.generate({ prompt })
       const generations = response.generations
       setMessage(`${generations[0].text}`)
-      setLoading(false)
     }
-
+    
     prompt && generate()
+    setLoading(false)
   }, [prompt])
 
   return (
