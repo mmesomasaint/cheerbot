@@ -5,7 +5,6 @@ import Autocomplete from '@mui/material/Autocomplete'
 import Button from '@mui/material/Button'
 import Generator from './Generator.tsx'
 import { useState } from 'react'
-import { zIndex } from 'material-ui/styles'
 
 const theOccassion = [
   { label: 'Christmas' },
