@@ -44,7 +44,7 @@ function App() {
 
   const createPrompt = () => {
     setPrompt(
-      `Generate a short '${formData.occassion}' message for me. This message should be from me to my '${formData.relationship}' called [recipients-name]. This message should feel natural and from the heart.`
+      `Generate a short '${formData.occassion}' message for me. This message should be from me to my '${formData.relationship}' called [recipients-name]. This message should feel natural and from the heart. Please do not ask me your usual questions like 'please tell me if you want anything more?' or 'do you want me to generate more?'. I want this message to be unique and special.`
     )
   }
 
