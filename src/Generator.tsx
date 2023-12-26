@@ -6,11 +6,13 @@ type PropTypes = {
   prompt: string
 }
 
-const cohere = new CohereClient({
-  token: process.env.COHERE_API_KEY ?? '',
-})
-
 export default function Generator({ prompt }: PropTypes) {
+  const API_KEY = import.meta.env.VITE_COHERE_API_KEY
+  console.log('API_KEY: ', API_KEY)
+  const cohere = new CohereClient({
+    token: API_KEY ?? '',
+  })
+
   const [message, setMessage] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
 
