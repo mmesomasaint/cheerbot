@@ -24,13 +24,26 @@ export default function Generator({ prompt }: PropTypes) {
     return randomNumber;
   }
 
+  const removeEndingPhrase = (str: string) => {
+    const phraseToRemove = 'would you like me to generate a different message';
+    const endingPunctuation = /[\.\?!]$/; // Regular expression to match ending punctuation
+  
+    // Check if the string ends with the phrase (ignoring case and ending punctuation)
+    if (str.toLowerCase().endsWith(phraseToRemove.toLowerCase()) ||
+        str.toLowerCase().endsWith(phraseToRemove.toLowerCase() + endingPunctuation)) {
+      return str.slice(0, -phraseToRemove.length - endingPunctuation.length);
+    } else {
+      return str; // Return the original string if the phrase is not found
+    }
+  }
+
   useEffect(() => {
     const generate = async () => {
       setLoading(true)
       const response = await cohere.generate({ prompt })
       const generations = response.generations
       const generatedMsg = generations[getRandomNumber(generations.length)].text
-      setMessage(`${generatedMsg}`)
+      setMessage(`${removeEndingPhrase(generatedMsg)}`)
     }
     
     prompt && generate().then(() => setLoading(false))
