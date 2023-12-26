@@ -53,8 +53,8 @@ function App() {
       <header className='fixed w-full md:px-10 px-5 py-4 border-b border-gray-300/20 bg-[#242424]'>
         <div className='flex justify-between items-center'>
           <div className=''>
-            <Text size='xl'>Cheerbot</Text>
-            <Text size='xs'>Right words for your messages</Text>
+            <Text size='xl' faded>Cheerbot</Text>
+            <Text size='xs' faded>Right words for your messages</Text>
           </div>
           <div className='w-12 h-12 flex justify-center items-center border border-gray-300/20 rounded-lg duration-300 hover:scale-110 hover:shadow-lg'>
             <FaGithub className='text-3xl' />
@@ -74,7 +74,7 @@ function App() {
               options={theOccassion}
               sx={{ width: '100%', '& .css-y8fhu3-MuiInputBase-root-MuiOutlinedInput-root': {
                 // Normal color: white at opacity 0.5
-                color: 'rgba(255, 255, 255, 0.5)',
+                borderColor: 'rgba(255, 255, 255, 0.5)',
           
                 // On focus color: same as normal color
                 '&:focus': {
@@ -119,14 +119,14 @@ function App() {
       <footer className='w-full md:px-10 px-5 py-4 border-t border-gray-300/20'>
         <div className='flex justify-between items-center'>
           <div className=''>
-            <Text size='xs'>Made with ❤️ by</Text>
+            <Text size='xs' faded>Made with ❤️ by</Text>
             <TextLink to='https://github.com/mmesomasaint'>
               Mmesoma Saint
             </TextLink>
           </div>
           <div className=''>
-            <Text size='xs'>&copy; 2023</Text>
-            <Text size='sm'>Cheerbot</Text>
+            <Text size='xs' faded>&copy; 2023</Text>
+            <Text size='sm' faded>Cheerbot</Text>
           </div>
         </div>
       </footer>

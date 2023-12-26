@@ -47,7 +47,7 @@ export function TextLink({
       href={to}
       className={`hover:underline decoration-from-font underline-offset-4 decoration-primary ${className}`}
     >
-      <Text size='sm' primary>
+      <Text size='sm' faded>
         {children}
       </Text>
     </a>
