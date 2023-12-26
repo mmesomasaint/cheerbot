@@ -109,6 +109,7 @@ function App() {
             />
             <Button
               type='button'
+              disabled={!(formData.occassion && formData.relationship)}
               onClick={createPrompt}
               sx={{ width: '100%', backgroundColor: '#242424' }}
               variant='contained'
