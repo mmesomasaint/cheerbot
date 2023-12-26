@@ -1,5 +1,5 @@
 import { CohereClient } from 'cohere-ai'
-import { Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Text from './components/text.tsx'
 
 type PropTypes = {
@@ -25,7 +25,7 @@ export default function Generator({ prompt }: PropTypes) {
 
   return (
     <article className='p-4 w-full h-full bg-transparent border border-black/20 rounded-md'>
-      <Text size='xs'>
+      <Text size='sm' copy>
         {message ? `${message}` : 'Something went wrong. Please try again.'}
       </Text>
     </article>
