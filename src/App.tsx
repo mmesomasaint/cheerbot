@@ -32,7 +32,10 @@ const theRelationship = [
 
 function App() {
   const [prompt, setPrompt] = useState<string>('')
-  const [formData, setFormData] = useState<{occassion: string | null; relationship: string | null}>({
+  const [formData, setFormData] = useState<{
+    occassion: string | null
+    relationship: string | null
+  }>({
     occassion: null,
     relationship: null,
   })
