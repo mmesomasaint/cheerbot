@@ -1,9 +1,7 @@
 import { FaGithub } from 'react-icons/fa6'
 import Text, { TextLink } from './components/text.tsx'
-import TextField from '@mui/material/TextField'
-import Autocomplete from '@mui/material/Autocomplete'
-import Button from '@mui/material/Button'
 import Generator from './Generator.tsx'
+import { Button, Autocomplete, TextField } from '@mui/material'
 import { useState } from 'react'
 
 const theOccassion = [
@@ -52,7 +50,7 @@ function App() {
 
   return (
     <div className='min-h-screen flex flex-col w-full'>
-      <header className='z-30 fixed w-full md:px-10 px-5 py-4 border-b border-gray-300/20 bg-[#242424]'>
+      <header className='z-30 fixed w-full md:px-10 px-5 py-4 bg-[#242424]'>
         <div className='flex justify-between items-center'>
           <div className=''>
             <Text size='xl' faded>
@@ -73,7 +71,6 @@ function App() {
             <Autocomplete
               disablePortal
               id='occassion-box'
-              name='occassion'
               onChange={(_: any, newValue: any) => setOccassion(newValue.label)}
               options={theOccassion}
               sx={{ width: '100%' }}
@@ -87,11 +84,8 @@ function App() {
               )}
             />
             <Autocomplete
-              required
-              error={'Error'}
               disablePortal
               id='relationship-box'
-              name='relationship'
               value={formData.relationship}
               onChange={(_: any, newValue: any) =>
                 setRelationship(newValue.label)
