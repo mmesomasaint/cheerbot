@@ -1,7 +1,7 @@
-import { FaGithub } from 'react-icons/fa6'
 import Text, { TextLink } from './components/text.tsx'
 import Generator from './Generator.tsx'
 import { Button, Autocomplete, TextField } from '@mui/material'
+import { GitHub } from '@mui/icons-material'
 import { useState } from 'react'
 
 const theOccassion = [
@@ -65,7 +65,7 @@ function App() {
             </Text>
           </div>
           <div className='w-12 h-12 flex justify-center items-center border border-gray-300/20 rounded-lg duration-300 hover:scale-110 hover:shadow-lg'>
-            <FaGithub className='text-3xl' />
+            <GitHub sx={{fontSize: 38}} />
           </div>
         </div>
       </header>
