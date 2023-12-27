@@ -8,7 +8,6 @@ type PropTypes = {
 
 export default function Generator({ prompt }: PropTypes) {
   const API_KEY = import.meta.env.VITE_COHERE_API_KEY
-  console.log('API_KEY: ', API_KEY)
   const cohere = new CohereClient({
     token: API_KEY ?? '',
   })
