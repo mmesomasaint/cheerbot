@@ -65,7 +65,7 @@ function App() {
             </Text>
           </div>
           <div className='w-12 h-12 flex justify-center items-center border border-gray-300/20 rounded-lg duration-300 hover:scale-110 hover:shadow-lg'>
-            <GitHub sx={{fontSize: 38}} />
+            <GitHub sx={{ fontSize: 38 }} />
           </div>
         </div>
       </header>
