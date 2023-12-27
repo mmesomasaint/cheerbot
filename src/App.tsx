@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 const theOccassion = [
   { label: 'Christmas' },
+  { label: 'Boxing Day' },
   { label: 'New Year' },
   { label: 'Christmas & New Year' },
   { label: 'Birthday' },
